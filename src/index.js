@@ -29,6 +29,7 @@ const config = {
   physics: {
     default: 'arcade',
     arcade: {
+      gravity: { y: 200 }
       // debug: true,
     }
   },
@@ -40,11 +41,17 @@ const config = {
 }
 
 new Phaser.Game(config);
+
+let bird;
+
 function preload(){
-this.load.image('sky', 'assets/sky.png');
+  this.load.image('sky', 'assets/sky.png');
+  this.load.image('bird', 'assets/bird.png');
+
 }
 function create(){
-this.add.image(config.width / 2 ,config.height / 2,'sky');
+  this.add.image(config.width / 2 ,config.height / 2,'sky');
+  bird = this.physics.add.sprite(100, 200, 'bird');
 }
 function update(){
 
