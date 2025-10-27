@@ -44,7 +44,7 @@ function preload(){
 this.load.image('sky', 'assets/sky.png');
 }
 function create(){
-this.add.image(400,300,'sky');
+this.add.image(config.width / 2 ,config.height / 2,'sky');
 }
 function update(){
 
